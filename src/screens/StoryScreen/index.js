@@ -125,18 +125,14 @@ const StoryScreen = ({navigation, route}) => {
 
   const IOSStory = () => (
     <SafeAreaView style={styles.main}>
-      <KeyboardAvoidingView
-        behavior={isIOS ? 'padding' : 'height'}
-        style={styles.avoidingView}>
+      <KeyboardAvoidingView behavior="padding" style={styles.avoidingView}>
         <MainContent />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
 
   const AndroidStory = () => (
-    <KeyboardAvoidingView
-      behavior={isIOS ? 'padding' : 'height'}
-      style={styles.avoidingView}>
+    <KeyboardAvoidingView behavior="height" style={styles.avoidingView}>
       <SafeAreaView style={styles.main}>
         <MainContent />
       </SafeAreaView>
