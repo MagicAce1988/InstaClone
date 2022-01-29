@@ -8,6 +8,8 @@ export const INSTAGRAM_LOGO =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png';
 
 export const getMainHeaderOptions = theme => {
+  // theme
+
   const {black} = theme.colors.generalColors;
   const style = getGeneralStyle();
 
