@@ -1,5 +1,3 @@
-import {useColorScheme} from 'react-native';
-
 export const DEFAULT_PADDING = 16;
 
 const palette = {
