@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
-const getGeneralStyles = () => {
-  return StyleSheet.create({
+const getGeneralStyles = () =>
+  StyleSheet.create({
     headerInstagramLogo: {
       width: 100,
       height: 30,
@@ -13,6 +13,5 @@ const getGeneralStyles = () => {
       marginLeft: 10,
     },
   });
-};
 
 export default getGeneralStyles;

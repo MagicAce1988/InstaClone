@@ -1,8 +1,8 @@
 import React, {useMemo} from 'react';
+import {LogBox, useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Router from './router';
-import {LogBox, useColorScheme} from 'react-native';
 import getTheme from './utils/theme';
 
 LogBox.ignoreLogs([
@@ -10,8 +10,11 @@ LogBox.ignoreLogs([
 ]);
 
 const App = () => {
+  // theme
+
   const mode = useColorScheme();
   const theme = useMemo(() => getTheme(mode), [mode]);
+
   return (
     <NavigationContainer theme={theme}>
       <SafeAreaProvider>

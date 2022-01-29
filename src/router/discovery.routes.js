@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
+import {useTheme} from '@react-navigation/native';
 import {getMainHeaderOptions, ROUTES} from '../utils/constants';
 import DiscoveryScreen from '../screens/DiscoveryScreen';
-import {useTheme} from '@react-navigation/native';
 
 const DiscoveryStack = createStackNavigator();
 
@@ -16,7 +16,7 @@ const DiscoveryRoutes = () => {
       <DiscoveryStack.Screen
         name={ROUTES.EXPLORE}
         component={DiscoveryScreen}
-        options={getMainHeaderOptions(theme)}
+        options={useMemo(() => getMainHeaderOptions(theme), [theme])}
       />
     </DiscoveryStack.Navigator>
   );
