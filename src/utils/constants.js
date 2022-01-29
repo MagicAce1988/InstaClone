@@ -3,13 +3,12 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import FastImage from 'react-native-fast-image';
 import getGeneralStyle from './../utils/generalStyles';
-import useOwnTheme from './../utils/theme';
 
 export const INSTAGRAM_LOGO =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png';
 
-export const getMainHeaderOptions = () => {
-  const {black} = useOwnTheme().colors.generalColors;
+export const getMainHeaderOptions = theme => {
+  const {black} = theme.colors.generalColors;
   const style = getGeneralStyle();
 
   return {

@@ -1,9 +1,8 @@
 import {Platform, StyleSheet} from 'react-native';
-import useOwnTheme from '../../utils/theme';
 
-const style = () => {
-  const {white} = useOwnTheme().colors.generalColors;
-  const {inputBackground} = useOwnTheme().colors.screens.storyScreen;
+const style = theme => {
+  const {white} = theme.colors.generalColors;
+  const {inputBackground} = theme.colors.screens.storyScreen;
 
   return StyleSheet.create({
     main: {

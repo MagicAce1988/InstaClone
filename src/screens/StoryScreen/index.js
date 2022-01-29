@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useMemo, useRef, useState} from 'react';
 import {
   ActivityIndicator,
   Keyboard,
@@ -17,9 +17,13 @@ import ProfilePicture from './../../components/ProfilePicture';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import getStyles from './style';
-import useOwnTheme from '../../utils/theme';
+
+import {useTheme} from '@react-navigation/native';
 
 const StoryScreen = ({navigation, route}) => {
+  // theme
+  const theme = useTheme();
+  const styles = useMemo(() => getStyles(theme), [theme]);
   // state and variables
   const {width} = useWindowDimensions();
   const allUsers = getUserStories();
@@ -29,11 +33,9 @@ const StoryScreen = ({navigation, route}) => {
   const [visibleStoryIndex, setVisibleStoryIndex] = useState(0);
   const visibleStory = stories[visibleStoryIndex];
   const isKeyboardOpen = useRef(false);
-  const {white} = useOwnTheme().colors.generalColors;
-  const {inputPlaceholder} = useOwnTheme().colors.screens.storyScreen;
+  const {white} = theme.colors.generalColors;
+  const {inputPlaceholder} = theme.colors.screens.storyScreen;
   const isIOS = Platform.OS === 'ios';
-
-  const styles = getStyles();
 
   // handlers
 

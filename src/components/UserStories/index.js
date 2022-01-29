@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {FlatList, View} from 'react-native';
 import UserStory from '../UserStory';
 import getUserStories from '../../data/stories';
 import getStyles from './style';
 
 const UserStories = () => {
+  // theme
+
+  const styles = useMemo(() => getStyles(), []);
+
   // variables and state
+
   const userStories = getUserStories();
-  const styles = getStyles();
 
   return (
     <FlatList

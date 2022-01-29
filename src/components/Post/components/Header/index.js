@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Entypo';
 import ProfilePicture from '../../../ProfilePicture';
 import getStyles from './style';
 
 const Header = ({profilePicture, name}) => {
-  // variables and state
-
-  const styles = getStyles();
+  // theme
+  const theme = useTheme();
+  const styles = useMemo(() => getStyles(theme), [theme]);
 
   return (
     <View style={styles.container}>

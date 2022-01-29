@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {ROUTES} from './../../utils/constants';
 import ProfilePicture from '../ProfilePicture';
+import {useTheme} from '@react-navigation/native';
 import getStyles from './style';
 
 const UserStory = ({profilePicture, name, userId}) => {
+  // theme
+
+  const theme = useTheme();
+  const styles = useMemo(() => getStyles(theme), [theme]);
+
   // variables and state
 
-  const styles = getStyles();
   const navigation = useNavigation();
 
   // handlers

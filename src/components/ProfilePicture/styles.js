@@ -1,15 +1,17 @@
 import {StyleSheet} from 'react-native';
-import useOwnTheme from '../../utils/theme';
 
-const styles = ({
-  size = 80,
-  borderWidth = 3,
-  borderSpacing,
-  borderColor,
-  borderType,
-  spacingBorderColor,
-}) => {
-  const {profilePicture} = useOwnTheme().colors.components;
+const styles = (
+  theme,
+  {
+    size = 80,
+    borderWidth = 3,
+    borderSpacing,
+    borderColor,
+    borderType,
+    spacingBorderColor,
+  },
+) => {
+  const {profilePicture} = theme.colors.components;
 
   const borderTypes = {
     dashed: 'dashed',

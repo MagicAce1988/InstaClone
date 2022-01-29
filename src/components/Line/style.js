@@ -1,8 +1,7 @@
 import {StyleSheet} from 'react-native';
-import useOwnTheme from '../../utils/theme';
 
-const style = () => {
-  const {line} = useOwnTheme().colors.components;
+const style = theme => {
+  const {line} = theme.colors.components;
 
   return StyleSheet.create({
     line: {
