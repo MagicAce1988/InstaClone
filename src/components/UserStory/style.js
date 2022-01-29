@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
-import useOwnTheme, {DEFAULT_PADDING} from '../../utils/theme';
+import {DEFAULT_PADDING} from '../../utils/theme';
 
-const styles = () => {
-  const {story} = useOwnTheme().colors.components;
+const styles = theme => {
+  const {story} = theme.colors.components;
 
   return StyleSheet.create({
     main: {

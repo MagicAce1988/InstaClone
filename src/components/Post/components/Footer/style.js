@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
-import useOwnTheme, {DEFAULT_PADDING} from '../../../../utils/theme';
+import {DEFAULT_PADDING} from '../../../../utils/theme';
 
-const styles = () => {
-  const {colors} = useOwnTheme();
+const styles = theme => {
+  const {colors} = theme;
 
   return StyleSheet.create({
     container: {

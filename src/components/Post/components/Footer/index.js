@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicon from 'react-native-vector-icons/Ionicons';
@@ -8,12 +9,15 @@ import millify from 'millify';
 import getStyles from './style';
 
 const Footer = ({likesCount, caption, date}) => {
+  // theme
+
+  const theme = useTheme();
+  const styles = useMemo(() => getStyles(theme), [theme]);
+
   // variables and state
 
   const [likesNumber, setLikesNumber] = useState(likesCount);
   const [likedByCurrentUser, setLikedByCurrentUser] = useState(false);
-
-  const styles = getStyles();
 
   const leftIcons = [
     <AntDesign

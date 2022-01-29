@@ -1,26 +1,13 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {View} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import FastImage from 'react-native-fast-image';
 import getStyles from './styles';
 
-const ProfilePicture = ({
-  profilePictureUri,
-  size,
-  borderWidth,
-  borderColor,
-  borderType,
-  borderSpacing,
-  spacingBorderColor,
-}) => {
-  // variables and state
-  const styles = getStyles({
-    size,
-    borderWidth,
-    borderColor,
-    borderType,
-    borderSpacing,
-    spacingBorderColor,
-  });
+const ProfilePicture = ({profilePictureUri, ...props}) => {
+  // theme
+  const theme = useTheme();
+  const styles = useMemo(() => getStyles(theme, props), [props, theme]);
 
   return (
     <View style={styles.mainContainer}>

@@ -2,12 +2,15 @@ import React, {useLayoutEffect} from 'react';
 import HomeScreen from '../screens/HomeScreen';
 import {getMainHeaderOptions, ROUTES} from '../utils/constants';
 import StoryScreen from '../screens/StoryScreen';
-import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
+import {getFocusedRouteNameFromRoute, useTheme} from '@react-navigation/native';
 import {TransitionPresets, createStackNavigator} from '@react-navigation/stack';
 
 const HomeStack = createStackNavigator();
 
 const HomeRoutes = ({navigation, route}) => {
+  // theme
+  const theme = useTheme();
+
   // effects
 
   useLayoutEffect(() => {
@@ -22,7 +25,7 @@ const HomeRoutes = ({navigation, route}) => {
       <HomeStack.Screen
         name={ROUTES.FEED}
         component={HomeScreen}
-        options={getMainHeaderOptions()}
+        options={getMainHeaderOptions(theme)}
       />
       <HomeStack.Screen
         name={ROUTES.STORY}

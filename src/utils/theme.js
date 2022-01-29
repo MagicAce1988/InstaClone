@@ -9,8 +9,7 @@ const palette = {
   },
 };
 
-function useOwnTheme() {
-  const mode = useColorScheme();
+function getTheme(mode) {
   return {
     colors: {
       generalColors: {
@@ -105,4 +104,4 @@ function useOwnTheme() {
   };
 }
 
-export default useOwnTheme;
+export default getTheme;
